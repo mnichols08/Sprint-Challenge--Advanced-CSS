@@ -1,5 +1,5 @@
 nav {
-    background: rgba(@nav-bg,.75);
+    background: rgba(@nav-bg, .75);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,18 +7,32 @@ nav {
     border-bottom: 2px inset @nav-border;
     position: fixed;
     top: 0;
-    width: 60%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(#0000ff7a, blue 33%, #ffffff8f 33%, white 66%, #ff000096 66%, red);
-    clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
-    border: 0;
+    width: 100%;
+
+    background: linear-gradient(#f6f6f6b4, #ffffffef);
+    border-bottom: 1px inset #f1f1f1;
+    box-shadow: 0 1rem 2rem rgba(black, .5);
+    z-index: 2001;
+
+    @media @desktop-xl {
+        width: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(#0000ff7a, blue 33%, #ffffff8f 33%, white 66%, #ff000096 66%, red);
+        clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+        border: 0;
+    }
+
     h1 {
         animation: flyIn 5s;
-        position: relative;
-        top: 1.75rem;
-        margin-bottom: 0.6rem;
+
+        @media @desktop-xl {
+            position: relative;
+            top: 1.75rem;
+            margin-bottom: 0.6rem;
+        }
     }
+
     ul {
         display: flex;
         justify-content: space-around;
@@ -28,12 +42,14 @@ nav {
         @media @phone {
             width: 100%;
         }
+
         a {
             color: #000;
             text-decoration: none;
             font-family: @nav-font;
             font-size: 1.6rem;
-            &:hover{
+
+            &:hover {
                 text-decoration: underline;
                 color: #111;
             }

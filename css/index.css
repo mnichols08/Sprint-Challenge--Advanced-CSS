@@ -165,9 +165,17 @@ table {
 * {
   box-sizing: border-box;
 }
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url(../img/nebula.jpg) url(../img/wow.jpg) url(../img/space.mp4) url(../img/sound.mp3);
+}
 html {
   font-size: 62.5%;
-  font-weight: 800;
+  font-weight: 700;
 }
 html,
 body {
@@ -199,6 +207,30 @@ p {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
+  transition: all 0.3s;
+}
+@media only screen and (min-width: 1400px) {
+  .container {
+    max-width: 50%;
+    padding: 1%;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1400px) {
+  .container {
+    max-width: 1400px;
+    padding: 0 15%;
+  }
+}
+@media only screen and (min-width: 51px) and (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .container {
+    width: 80%;
+  }
 }
 .flex {
   display: flex;
@@ -301,14 +333,53 @@ p {
 .flex-self-end {
   align-self: flex-end;
 }
-body {
-  background: linear-gradient(45deg, hsl(0, 0%, 20%), hsl(0, 0%, 10%));
+@media only screen and (min-width: 1400px) {
+  body {
+    background: linear-gradient(45deg, hsl(0, 0%, 20%), hsl(0, 0%, 10%));
+  }
+}
+img {
+  max-width: 100%;
+}
+.desktop-only {
+  display: none;
+}
+@media only screen and (min-width: 1400px) {
+  .desktop-only {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .desktop-only video {
+    display: block;
+    z-index: -1;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .home {
+  animation: fadeIn 2s;
   margin-top: 11.5rem;
 }
 .home * {
   transition: all 0.3s;
+}
+@media only screen and (min-width: 1400px) {
+  .home {
+    background: linear-gradient(#005effad, #007c9254);
+    border: 1px solid #e0e0e0;
+    color: #000;
+    border-radius: 2em;
+    box-shadow: 0 0 2rem #00000094;
+  }
+  .home img {
+    box-shadow: 0 0 2rem #00000094;
+  }
 }
 @media only screen and (max-width: 500px) {
   .home {
@@ -434,6 +505,76 @@ body {
   height: auto;
   border-radius: 10px;
 }
+.home form {
+  display: grid;
+  border: 2px inset #F1F1F1;
+  padding: 5%;
+  padding-bottom: 2%;
+  border-radius: 2rem;
+  background: #ccc;
+}
+@media only screen and (min-width: 1400px) {
+  .home form {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+  }
+  .home form h4 {
+    color: #fff;
+    margin: 2rem 0;
+    text-align: center;
+    font-size: 14rem;
+  }
+  .home form input,
+  .home form select,
+  .home form textarea {
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom: 3px solid transparent;
+    display: block;
+    transition: 0.2s 0.3s;
+  }
+  .home form input:focus,
+  .home form select:focus,
+  .home form textarea:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #6e34b9;
+  }
+  .home form input:focus:invalid,
+  .home form select:focus:invalid,
+  .home form textarea:focus:invalid {
+    border-bottom: 3px solid #ffe600;
+  }
+  .home form input::-webkit-input-placeholder,
+  .home form select::-webkit-input-placeholder,
+  .home form textarea::-webkit-input-placeholder {
+    color: darkgrey;
+  }
+  .home form label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: 0.2s 0.3s;
+  }
+  .home form .btn {
+    width: 30%;
+  }
+}
+@media only screen and (min-width: 1400px) and only screen and (min-width: 1400px) {
+  .home form input::-webkit-input-placeholder,
+  .home form select::-webkit-input-placeholder,
+  .home form textarea::-webkit-input-placeholder {
+    color: #000;
+  }
+}
+@media only screen and (min-width: 1400px) and only screen and (max-width: 500px) {
+  .home form .btn {
+    width: 100%;
+  }
+}
 nav {
   background: rgba(246, 246, 246, 0.75);
   display: flex;
@@ -443,18 +584,31 @@ nav {
   border-bottom: 2px inset #F1F1F1;
   position: fixed;
   top: 0;
-  width: 60%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: linear-gradient(#0000ff7a, blue 33%, #ffffff8f 33%, white 66%, #ff000096 66%, red);
-  clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
-  border: 0;
+  width: 100%;
+  background: linear-gradient(#f6f6f6b4, #ffffffef);
+  border-bottom: 1px inset #f1f1f1;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  z-index: 2001;
+}
+@media only screen and (min-width: 1400px) {
+  nav {
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(#0000ff7a, blue 33%, #ffffff8f 33%, white 66%, #ff000096 66%, red);
+    clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+    border: 0;
+  }
 }
 nav h1 {
   animation: flyIn 5s;
-  position: relative;
-  top: 1.75rem;
-  margin-bottom: 0.6rem;
+}
+@media only screen and (min-width: 1400px) {
+  nav h1 {
+    position: relative;
+    top: 1.75rem;
+    margin-bottom: 0.6rem;
+  }
 }
 nav ul {
   display: flex;
@@ -486,4 +640,28 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+footer.container {
+  color: #000;
+  background: #f4f4f4;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 3rem;
+  padding: 2rem 0;
+}
+@media only screen and (min-width: 1400px) {
+  footer.container {
+    margin-top: 2.5em;
+    max-width: 50%;
+    background: linear-gradient(#005effad, #007c9254);
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1400px) {
+  footer.container {
+    max-width: 75%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  footer.container {
+    width: 98%;
+  }
 }

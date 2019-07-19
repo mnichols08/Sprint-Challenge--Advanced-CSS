@@ -1,4 +1,3 @@
-// Footer Styles
 footer {
   color: #22283B;
   background: #f4f4f4;
@@ -8,4 +7,28 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &.container{
+    color: #000;
+    background:  #f4f4f4;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    @media @desktop-xl{
+        margin-top: 2.5em;
+        max-width: 50%;
+        background: linear-gradient(#005effad, #007c9254);
+  
+    }
+    @media @desktop{
+  
+        max-width: 75%;
+  
+    }
+    @media @phone {
+  
+      width: 98%;
+  
+    }
+  }
 }
