@@ -1,1 +1,27 @@
-// Mixins Here
+.box-shadow(@spread: 3rem, @opacity: .5) {
+    box-shadow: 0 0 @spread rgba(0,0,0,@opacity);
+}
+
+.transition(@select: all, @duration: .3s){
+    transition: @select @duration;
+}
+
+.button(@width: 100%, @bg: @nav-font, @text: @sea-shell) {
+    width: @width;
+    background: @bg;
+    color: @text;
+    text-align: center;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 4pt;
+    cursor: pointer;
+    .transition();
+
+    &:hover{
+        transform: translateY(-1px);
+        .box-shadow();
+    }
+    &:active{
+        transform: translateY(1px);
+    }
+}
