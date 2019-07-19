@@ -3,8 +3,16 @@
   box-sizing: border-box;
 }
 
+body::after{
+  position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+  content:url(../img/nebula.jpg) url(../img/wow.jpg) url(../img/space.mp4) url(../img/sound.mp3);
+}
+
 html {
   font-size: 62.5%;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html, body {
@@ -12,9 +20,22 @@ html, body {
   color: @main-font-color;
 }
 
+
+
+img {
+  max-width: 100%;
+  border-radius: 4pt;
+  width: 100%;
+  .box-shadow();
+}
+
 h1, h2, h3, h4, h5 {
   font-family: 'Russo One', sans-serif;
   color: @header-font-color;
+}
+
+h1 {
+  font-size: 5rem;
 }
 
 h2 {
@@ -25,6 +46,12 @@ h3 {
   font-size: 2.8rem;
 }
 
+h2,h3,h4,h5,h6{
+  @media @desktop-xl {
+    color: @wild-sand;
+  }
+}
+
 p {
   font-size: 1.6rem;
   line-height: 1.4;
@@ -33,6 +60,21 @@ p {
 .container {
   max-width: 800px;
   width: 100%;
-  margin: 0 auto;  
+  margin: 0 auto;
+  .transition();
+  @media @desktop-xl {
+    padding: 1%;
+    width: 100%;
+  }
+  @media @desktop {
+    max-width: 1400px;
+    padding: 0 15%;
+  }
+  @media @tablet {
+    width: 90%;
+  }
+  @media @phone {
+    width: 80%;
+  }
 }
 

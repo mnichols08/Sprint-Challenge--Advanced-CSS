@@ -1,0 +1,146 @@
+  /* Header/Blog Title */
+  .blog.header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn { 
+    float: left;
+    width: 75%;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+  }
+  
+  /* Fake image */
+  .blog.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+  .card:nth-of-type(2) p {
+    margin-top: 20rem;
+}
+  /* Add a card effect for articles */
+  .blog.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .blog .leftcolumn img {
+    max-height: 100%;
+  }
+
+  .group {
+    position: relative;
+  }
+    .group .form-input {
+      background: none;
+      color: #000;
+      font-size: 18px;
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid grey;
+      margin: 25px 0; }
+      .group .form-input:focus {
+        outline: none; }
+      .group .form-input:focus ~ .form-input-label {
+        top: -10px;
+        font-size: 12px;
+        color: black; 
+        @media @desktop-xl{
+            color: #eee;
+        }
+        }
+    .group input[type='password'] {
+      letter-spacing: 0.3em; }
+    .group .form-input-label {
+      color: #000;
+      font-size: 16px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      top: 50px;
+      left: 5px;
+      @media @desktop-xl{
+          color: #eee;
+      }
+      transition: 300ms ease all; }
+      .group .form-input-label.shrink {
+        top: -14px;
+        font-size: 12px;
+        color: black; }
+  
+
+  .sign-in-and-sign-up {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto;
+    flex-wrap: wrap;}
+
+      
+
+  .custom-button {
+    min-width: 165px;
+    width: auto;
+    height: 50px;
+    letter-spacing: 0.5px;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Open Sans Condensed';
+    font-weight: bolder;
+    border: none;
+    cursor: pointer; }
+    .custom-button:hover {
+      background-color: white;
+      color: black;
+      border: 1px solid black; }
+    .custom-button.google-sign-in {
+        font-size: 2rem;
+        line-height: 1.5rem;
+      background-color: #4285f4;
+      color: #fff; }
+      .custom-button.google-sign-in:hover {
+        background-color: #357ae8;
+        border: none; }
+
+        .sign-in {
+            width: 380px;
+            display: flex;
+            flex-direction: column; }
+            .sign-in .title {
+              margin: 10px 0; }
+            .sign-in .buttons {
+              display: flex;
+              justify-content: space-between; }
+
+              .sign-up {
+                display: flex;
+                flex-direction: column;
+                width: 380px; }
+                .sign-up .title {
+                  margin: 10px 0; }
+              
+          
+  

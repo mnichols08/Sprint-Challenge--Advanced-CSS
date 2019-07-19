@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SpaceWalkers</title>
 
   <link href="https://fonts.googleapis.com/css?family=Russo+One|Ubuntu" rel="stylesheet">
@@ -15,13 +15,32 @@
 </head>
 
 <body>
-
- <!-- navigation code here -->
+    <audio autoplay>
+      <source src="img/sound.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
+<div class="desktop-only">
+  
+  <video class="bg-video" autoplay muted loop>
+      <source src="img/space.mp4" type="video/mp4">
+      <img src="img/wow.jpg">
+    </video>
+</div>
+  <nav>
+    <h1>SpaceWalkers</h1>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#signup">Sign In</a></li>
+    </ul>
+  </nav>
 
   <div class="container home">
-
+    <div style="animation: blurIn 1s">
     <header class="intro">
-       <!-- image code here -->
+      <img src="img/main-header.png" alt="Space Blast Off">
 
       <h2>Lift Off</h2>
     
@@ -62,10 +81,262 @@
 
     </section>
 
-    <footer>
-      <p>Copyright SpaceWalkers 2018</p>
-    </footer>
+    <section class="content-inquire" id="signup">
+      <h2>Magazine Subscription</h2>
+      <p>Does space intrigue you as much as it does us? Provide us your mailing address below to get your very first magazine from us for free! $249.99 monthly subscription after. No refunds, unless you are on Mars.</p>
+      <form>
+        <h4>Sign Me Up!</h4>
+        
+        <input name="name" type="text" placeholder="Full Name" required="">
+        <label for="name">Full Name</label>          
+
+        <input name="address1" type="email" placeholder="Address Line 1" required="">
+        <label for="address1">Address Line 1</label>
+
+        <input name="address2" type="email" placeholder="Address Line 2" required="">
+        <label for="address2">Address Line 2</label>
+
+    
+        <input name="city" type="text" placeholder="City" required="">
+        <label for="email">City</label>
+
+        <input name="state" type="text" placeholder="State" required="">
+        <label for="email">State</label>
+
+        <input name="zip" type="number" placeholder="Zip Code" required="">
+        <label for="zip">Zip Code</label>
+
+        
+        <div class="flex flex-items-center flex-justify-center flex-no-response ">
+        <input type="checkbox" required="">
+        <label for="optin">I agree to being billed for a monthly subscription of $249.99 after first free magazine.</label>
+        <button type="submit" onclick="alert('Your subscription has been confirmed. Thanks for your money! (NOT REALLY THIS IS A TEST!)')">Submit</button>
+         </div>
+      </form>
+    </section>
 
   </div>
+  </div>
+
+  <footer class="container">
+    <p>Copyright SpaceWalkers 2018</p>
+  </footer>
+  <script>
+  let container = document.querySelector('.container.home');
+  let home = container.innerHTML;
+  let links = document.querySelectorAll('nav ul li a');
+
+  links[4].addEventListener('click', () => {
+    window.scrollTo(0, 0);
+    let style= document.createElement('style');
+    style.innerHTML = 'header.container img {display: none}';
+    document.head.append(style);
+    document.querySelector('.container.home').innerHTML = `<div class="sign-in-and-sign-up" style="animation: blurIn 1s"><div class="sign-in"><h2>I already have an account</h2><span>Sign in with your email and password</span><form><div class="group"><input class="form-input" name="email" type="email" required="" value=""><label class="form-input-label">email</label></div><div class="group"><input class="form-input" name="password" type="password" required="" value=""><label class="form-input-label">password</label></div><div class="buttons"><button class=" custom-button" type="submit"> Sign in </button><button class="google-sign-in custom-button">Sign in with Google</button></div></form></div><div class="sign-up"><h2 class="title">I do not have a account</h2><span>Sign up with your email and password</span><form class="sign-up-form"><div class="group"><input class="form-input" type="text" name="displayName" required="" value=""><label class=" form-input-label">Display Name</label></div><div class="group"><input class="form-input" type="email" name="email" required="" value=""><label class=" form-input-label">Email</label></div><div class="group"><input class="form-input" type="password" name="password" required="" value=""><label class=" form-input-label">Password</label></div><div class="group"><input class="form-input" type="password" name="confirmPassword" required="" value=""><label class=" form-input-label">Confirm Password</label></div><button class=" custom-button" type="submit">SIGN UP</button></form></div></div>`;
+  })
+
+
+  links[3].addEventListener('click', () => {
+    window.scrollTo(0, 0);
+    let style= document.createElement('style');
+    style.innerHTML = 'header.container img {display: none}';
+    document.head.append(style);
+    document.querySelector('.container.home').innerHTML = `
+            <section class="contact" style="animation: blurIn 1s">
+            <form action="#" class="contact">
+                <h2>
+                Contact Us
+                </h2>
+                <div class="name">
+                <label for="firstName">
+                    First Name
+                </label>
+                <input id="firstName" type="text" required>
+                </input>
+                <label for="lastName">
+                    Last Name
+                </label>
+                <input id="lastName" type="text" required>
+                </input>
+                </div>
+                <label for="email">
+                    Email
+                </label>
+                <input id="email" type="email" required>
+                </input>
+                <label for="message">
+                    Message
+                </label>
+                <textarea id="message">
+                </textarea>
+                <button>
+                    Submit
+                </button>
+            </form>
+        </section>`;
+  })
+
+  links[2].addEventListener('click', () => {
+    window.scrollTo(0, 0);
+    let style= document.createElement('style');
+    style.innerHTML = 'header.container img {display: none}';
+    document.head.append(style);
+    document.querySelector('.container.home').innerHTML = `
+    <div style="animation: blurIn 1s" class="about">
+        <section class="top-content left">
+        <img src="img/jumbo-about.png" alt="City Skyline">
+          <div class="margin-1">
+          <h2>Blog</h2>
+        </section>
+        <section class="blog">
+        <div class="header">
+                <h2>Da Lambda School Student Blog</h2>
+              </div>
+              
+              <div class="row">
+                <div class="leftcolumn">
+                  <div class="card">
+                    <h2>My first sprint at Lambda</h2>
+                    <h5>One heck of a ride, July 12, 2019</h5>
+                    <div class="fakeimg" style="height:200px;"><img src="img/laptop.jpg" alt="A laptop"></div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil ea, provident delectus adipisci, minus deserunt molestiae at exercitationem, magnam aut alias ab dicta nostrum tempora dolore animi rerum harum? Provident?</p>
+                  </div>
+                  <div class="card">
+                    <h2>You got this!</h2>
+                    <h5>I am so hungry, Sep 2, 2018</h5>
+                    <div class="fakeimg" style="max-height:200px;"><img src="img/mural.jfif" alt="students on stairs by a mural"></div>
+                    <p>The Associated Press found that the wealthy financier's donations included $15,000 to the exclusive Hewitt School on the Upper East Side of Manhattan, $35,000 to the Junior Tennis Champions Center in College Park, Maryland, and $25,000 to the Ecole du Bel-Air grade school in Haiti — all after he pleaded guilty in 2008 to charges of soliciting a minor for prostitution.
+
+                            Epstein's donations through his charitable foundations, though not in violation of his status as a sex offender, were nonetheless awkward for some recipients. They were also, at times, difficult to trace.
+                            
+                            It wasn't until later, when they realized a sex offender was behind the donations, that the school, the tennis center and the Haiti project returned the money.</p>
+                  </div>
+                </div>
+                <div class="rightcolumn">
+                  <div class="card">
+                    <h2>A California school board has voted to paint over a mural of George Washington. Educators want to save it</h2>
+                    <div class="fakeimg" style="height:125px;"><img src="img/books.jpg" alt="School"></div>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                  </div>
+                  <div class="card">
+                    <h3>Popular Post</h3>
+                    <div class="fakeimg"><img src="img/legoblocks.jpg" alt="Lego Building Blocks"></div><br>
+                    <div class="fakeimg"><img src="img/cpu.jpg" alt="a CPU slot on a motherboard"></div><br>
+                    <div class="fakeimg"><img src="img/circuit.jpg" alt="a circuit board"></div>
+                  </div>
+                  <div class="card">
+                    <h3>Follow Me</h3>
+                    <p>Lorem, ipsum dolor sit</p>
+                  </div>
+                </div>
+              </div>
+              </section>
+    </div>
+    `;
+  })
+
+links[1].addEventListener("click", function() {
+    window.scrollTo(0, 0);
+    let style = document.createElement('style');
+    style.innerHTML = 'header.container img {display: none}';
+    document.head.append(style);
+    document.querySelector('.container.home').innerHTML =
+        `<div style="animation: blurIn 1s" class="about">
+        <img class=""" src="img/nebula.jpg" alt="Header Image of a nebula">
+        <div class="flex flex-column flex-w-100">
+            <h2>Space Travel</h2>
+            <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis asperiores neque labore officia optio nihil ea molestiae ab, quidem veritatis, magnam iste totam quaerat tempora consequuntur commodi? Unde, voluptate incidunt.
+            </p>
+        </div>
+        <hr>
+        <div class="flex">
+            <div class="flex-w-50 u-margin-1 u-padding-1 u-border-1 bg-grey">
+                <h2>Mars Adventure</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur eaque asperiores nulla
+                    maiores. Cumque provident quibusdam esse, omnis corrupti magnam sed, voluptates quis aut est
+                    velit eum reprehenderit magni unde.</p>
+                <button>
+                    Learn More
+                </button>
+            </div>
+            <div class="flex-w-50 u-margin-1 u-padding-1 u-border-1 bg-grey">
+                <h2>Third Rock From the Sun</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim impedit adipisci soluta? A maxime
+                    odio, perferendis dolorem eos architecto iusto culpa quo magni, incidunt unde, sed nostrum
+                    quibusdam provident ad.</p>
+                <button>
+                    Learn More
+                </button>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="flex-w-50 u-margin-1 u-padding-1 u-border-1 bg-grey">
+                <h2>The X-Files</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur eaque asperiores nulla
+                    maiores. Cumque provident quibusdam esse, omnis corrupti magnam sed, voluptates quis aut est
+                    velit eum reprehenderit magni unde.</p>
+                <button>
+                    Learn More
+                </button>
+            </div>
+            <div class="flex-w-50 u-margin-1 u-padding-1 u-border-1 bg-grey">
+                <h2>To Infinite and Beyond</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim impedit adipisci soluta? A maxime
+                    odio, perferendis dolorem eos architecto iusto culpa quo magni, incidunt unde, sed nostrum
+                    quibusdam provident ad.</p>
+                <button>
+                    Learn More
+                </button>
+            </div>
+        </div>
+        <div class="flex">
+            <div class="flex-w-50 u-margin-1 u-padding-1 u-border-1 bg-grey">
+                <h2>To boldy go where no man has gone before</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur eaque asperiores nulla
+                    maiores. Cumque provident quibusdam esse, omnis corrupti magnam sed, voluptates quis aut est
+                    velit eum reprehenderit magni unde.</p>
+                <button>
+                    Learn More
+                </button>
+            </div>
+            <div class="flex-w-50 u-margin-1 u-padding-1 u-border-1 bg-grey">
+                <h2>Burning Atmosphere</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim impedit adipisci soluta? A maxime
+                    odio, perferendis dolorem eos architecto iusto culpa quo magni, incidunt unde, sed nostrum
+                    quibusdam provident ad.</p>
+                <button>
+                    Learn More
+                </button>
+            </div>
+        </div>
+        <hr>
+        <div class="flex">
+            <div class="flex-w-50 u-margin-1 u-padding-1">
+                <h3>Some facts about Space Travel</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi soluta doloremque quam
+                    voluptatibus ab est iusto placeat sequi quis rerum aut ipsa et, aspernatur nisi, molestiae
+                    maiores fuga maxime officiis.</p>
+                <ul>
+                    <li>Mission to Mars in 2030</li>
+                    <li>You can volunteer as a pioneer</li>
+                    <li>That means you get to travel there for free!</li>
+                    <li>The catch is: You cannot come back :@</li>
+                </ul>
+            </div>
+            <div class="flex-w-50 flex-justify-center flex-content-center flex-items-center">
+                <img src="img/wow.jpg" alt="A clockwork nebula" class="flex-w-100">
+            </div>
+    </div>
+    `;
+    
+
+
+});
+document.querySelectorAll('nav ul li a')[0].addEventListener("click", function () {
+    window.scrollTo(0, 0);
+    document.querySelector('.container.home').innerHTML = home;
+});
+
+</script>
 </body>
 </html>
