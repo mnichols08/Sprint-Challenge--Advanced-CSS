@@ -199,6 +199,110 @@ p {
   width: 100%;
   margin: 0 auto;
 }
+.flex {
+  display: flex;
+}
+@media only screen and (max-width: 500px) {
+  .flex {
+    flex-direction: column;
+  }
+  .flex-no-response {
+    flex-direction: row;
+  }
+}
+.flex > * {
+  padding: 0.5em;
+}
+.flex-inline {
+  display: inline-flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+.flex-justify-start {
+  justify-content: flex-start;
+}
+.flex-justify-end {
+  justify-content: flex-end;
+}
+.flex-justify-center {
+  justify-content: center;
+}
+.flex-justify-between {
+  justify-content: space-between;
+}
+.flex-justify-around {
+  justify-content: space-around;
+}
+.flex-justify-even {
+  justify-content: space-evenly;
+}
+.flex-content-start {
+  align-content: flex-start;
+}
+.flex-content-end {
+  align-content: flex-end;
+}
+.flex-content-center {
+  align-content: center;
+}
+.flex-content-stretch {
+  align-content: stretch;
+}
+.flex-content-around {
+  align-content: space-around;
+}
+.flex-content-between {
+  align-content: space-between;
+}
+.flex-items-start {
+  align-items: flex-start;
+}
+.flex-items-end {
+  align-items: flex-end;
+}
+.flex-items-center {
+  align-items: center;
+}
+.flex-items-stretch {
+  align-items: stretch;
+}
+.flex-items-baseline {
+  align-items: baseline;
+}
+.flex-shrink {
+  flex-shrink: 2;
+}
+.flex-shrink-more {
+  flex-shrink: 3;
+}
+.flex-grow {
+  flex-grow: 2;
+}
+.flex-grow-more {
+  flex-grow: 3;
+}
+.flex-self-start {
+  align-self: flex-start;
+}
+.flex-self-end {
+  align-self: flex-end;
+}
+body {
+  background: linear-gradient(45deg, hsl(0, 0%, 20%), hsl(0, 0%, 10%));
+}
 .home {
   margin-top: 11.5rem;
 }
@@ -338,10 +442,18 @@ nav {
   border-bottom: 2px inset #F1F1F1;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(#0000ff7a, blue 33%, #ffffff8f 33%, white 66%, #ff000096 66%, red);
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+  border: 0;
 }
 nav h1 {
   animation: flyIn 5s;
+  position: relative;
+  top: 1.75rem;
+  margin-bottom: 0.6rem;
 }
 nav ul {
   display: flex;

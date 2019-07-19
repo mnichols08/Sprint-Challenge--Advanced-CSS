@@ -7,9 +7,17 @@ nav {
     border-bottom: 2px inset @nav-border;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(#0000ff7a, blue 33%, #ffffff8f 33%, white 66%, #ff000096 66%, red);
+    clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+    border: 0;
     h1 {
         animation: flyIn 5s;
+        position: relative;
+        top: 1.75rem;
+        margin-bottom: 0.6rem;
     }
     ul {
         display: flex;
