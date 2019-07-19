@@ -202,13 +202,16 @@ p {
 .home {
   margin-top: 11.5rem;
 }
+.home * {
+  transition: all 0.3s;
+}
 @media only screen and (max-width: 500px) {
   .home {
     margin-top: 10rem;
   }
 }
 .home img {
-  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 .home .intro img {
   border-radius: 4pt;
@@ -284,7 +287,7 @@ p {
   margin-bottom: 26px;
 }
 .home .walk .walk-text .btn {
-  width: 100%;
+  width: 10rem;
   background: #454A59;
   color: #F1F1F1;
   text-align: center;
@@ -292,12 +295,17 @@ p {
   font-size: 2rem;
   border-radius: 4pt;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   transition: all 0.3s;
-  width: 30%;
 }
 .home .walk .walk-text .btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  color: #454A59;
+  background: #F1F1F1;
 }
 .home .walk .walk-text .btn:active {
   transform: translateY(1px);
@@ -332,10 +340,13 @@ nav {
   top: 0;
   width: 100%;
 }
+nav h1 {
+  animation: flyIn 5s;
+}
 nav ul {
   display: flex;
-  justify-content: space-evenly;
-  width: 33%;
+  justify-content: space-around;
+  width: 65%;
   padding: 1% 0 0;
 }
 @media only screen and (max-width: 500px) {

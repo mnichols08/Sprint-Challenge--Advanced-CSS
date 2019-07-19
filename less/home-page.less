@@ -1,6 +1,9 @@
 // Home Content
 
 .home {
+  *{
+    .transition();
+  }
   margin-top: 11.5rem;
 
   @media @phone {
@@ -96,8 +99,7 @@
       }
 
       .btn {
-        .button();
-        width: 30%;
+        .button(10rem, @nav-font);
     
         @media @phone {
             width: 100%;
