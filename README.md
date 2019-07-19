@@ -34,15 +34,24 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the difference between an adaptive website and a fully responsive website?
 
+    * An adaptive website is when it is styled to look a certain way at different breakpoints. Thinking about it, my fun bus was actually a little more adaptive than responsive because it did have a different presentation for each device. A fully responsive website is one that relies heavily on media queries to generalize what a design should look like.
+
 2. Describe what it means to be mobile first vs desktop first.
+
+    * A developer that writes up `html` and then handles the `css` styling with media queries using `(min-width: __;)` it is mobile first. The Desktop first approach is to design the `css` at the highest resolution and then write media queries using `(max-width: __;)` instead.
 
 3. What does `font-size: 62.5%` in the `html` tag do for us when using `rem` units?
 
+    * Using 62.5% will change 1 rem to become 10px. It is a wise design decision because it acts as a reset for the font size and lets us do easy math to determine the size.
+
 4. How would you describe preprocessing to someone new to CSS?
+
+    * It's like driving to the concert while listening to the band that is playing the entire time. It is an extension to CSS that lets you code in a way that you can predict the results.
 
 5. What is your favorite concept in preprocessing? What is the concept that gives you the most trouble?
 
-You are expected to be able to answer all these questions. Your responses contribute to your Sprint Challenge grade. Skipping this section *will* prevent you from passing this challenge.
+    * So far I think that my favorite concept in LESS preprocessing is how a mixin is created and called. I prefer it to the SASS is called hands down. I don't have much trouble with it so far but I want to learn all of the functions in depth.
+
 
 ## Project Set Up
 
@@ -126,10 +135,10 @@ In your solution, it is essential that you follow best practices and produce cle
 
 After finishing your required elements, you can push your work further. These goals may or may not be things you have learned in this module but they build on the material you just studied. Time allowing, stretch your limits and see if you can deliver on the following optional goals:
 
-* [ ] Build a page of your choosing from the navigation items. Come up with content and images that fit the theme.
+* [x] Build a page of your choosing from the navigation items. Come up with content and images that fit the theme.
 
 * [x] Introduce CSS animations to your site.
 
-* [ ] Create a fixed navigation and add some opacity to the background
+* [x] Create a fixed navigation and add some opacity to the background
 
-* [ ] Create a form that would allow someone to sign up for a Spacewalkers Magazine subscription
+* [x] Create a form that would allow someone to sign up for a Spacewalkers Magazine subscription

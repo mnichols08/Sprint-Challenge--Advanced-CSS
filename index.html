@@ -15,14 +15,15 @@
 </head>
 
 <body>
-  <!-- <audio autoplay loop>
-    <source src="img/sound.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-  </audio> -->
+    <audio autoplay>
+      <source src="img/sound.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+      </audio>
 <div class="desktop-only">
+  
   <video class="bg-video" autoplay muted loop>
       <source src="img/space.mp4" type="video/mp4">
-      A video is being played in the background here, but unfortunately your browser is not supported!
+      <img src="img/wow.jpg">
     </video>
 </div>
   <nav>
@@ -37,7 +38,7 @@
   </nav>
 
   <div class="container home">
-
+    <div style="animation: blurIn 1s">
     <header class="intro">
       <img src="img/main-header.png" alt="Space Blast Off">
 
@@ -114,7 +115,7 @@
       </form>
     </section>
 
-
+  </div>
   </div>
 
   <footer class="container">
@@ -122,9 +123,116 @@
   </footer>
   <script>
   let container = document.querySelector('.container.home');
-let home = container.innerHTML;
-let links = document.querySelectorAll('nav ul li a');
+  let home = container.innerHTML;
+  let links = document.querySelectorAll('nav ul li a');
 
+  links[4].addEventListener('click', () => {
+    window.scrollTo(0, 0);
+    let style= document.createElement('style');
+    style.innerHTML = 'header.container img {display: none}';
+    document.head.append(style);
+    document.querySelector('.container.home').innerHTML = `<div class="sign-in-and-sign-up" style="animation: blurIn 1s"><div class="sign-in"><h2>I already have an account</h2><span>Sign in with your email and password</span><form><div class="group"><input class="form-input" name="email" type="email" required="" value=""><label class="form-input-label">email</label></div><div class="group"><input class="form-input" name="password" type="password" required="" value=""><label class="form-input-label">password</label></div><div class="buttons"><button class=" custom-button" type="submit"> Sign in </button><button class="google-sign-in custom-button">Sign in with Google</button></div></form></div><div class="sign-up"><h2 class="title">I do not have a account</h2><span>Sign up with your email and password</span><form class="sign-up-form"><div class="group"><input class="form-input" type="text" name="displayName" required="" value=""><label class=" form-input-label">Display Name</label></div><div class="group"><input class="form-input" type="email" name="email" required="" value=""><label class=" form-input-label">Email</label></div><div class="group"><input class="form-input" type="password" name="password" required="" value=""><label class=" form-input-label">Password</label></div><div class="group"><input class="form-input" type="password" name="confirmPassword" required="" value=""><label class=" form-input-label">Confirm Password</label></div><button class=" custom-button" type="submit">SIGN UP</button></form></div></div>`;
+  })
+
+
+  links[3].addEventListener('click', () => {
+    window.scrollTo(0, 0);
+    let style= document.createElement('style');
+    style.innerHTML = 'header.container img {display: none}';
+    document.head.append(style);
+    document.querySelector('.container.home').innerHTML = `
+            <section class="contact" style="animation: blurIn 1s">
+            <form action="#" class="contact">
+                <h2>
+                Contact Us
+                </h2>
+                <div class="name">
+                <label for="firstName">
+                    First Name
+                </label>
+                <input id="firstName" type="text" required>
+                </input>
+                <label for="lastName">
+                    Last Name
+                </label>
+                <input id="lastName" type="text" required>
+                </input>
+                </div>
+                <label for="email">
+                    Email
+                </label>
+                <input id="email" type="email" required>
+                </input>
+                <label for="message">
+                    Message
+                </label>
+                <textarea id="message">
+                </textarea>
+                <button>
+                    Submit
+                </button>
+            </form>
+        </section>`;
+  })
+
+  links[2].addEventListener('click', () => {
+    window.scrollTo(0, 0);
+    let style= document.createElement('style');
+    style.innerHTML = 'header.container img {display: none}';
+    document.head.append(style);
+    document.querySelector('.container.home').innerHTML = `
+    <div style="animation: blurIn 1s" class="about">
+        <section class="top-content left">
+        <img src="img/jumbo-about.png" alt="City Skyline">
+          <div class="margin-1">
+          <h2>Blog</h2>
+        </section>
+        <section class="blog">
+        <div class="header">
+                <h2>Da Lambda School Student Blog</h2>
+              </div>
+              
+              <div class="row">
+                <div class="leftcolumn">
+                  <div class="card">
+                    <h2>My first sprint at Lambda</h2>
+                    <h5>One heck of a ride, July 12, 2019</h5>
+                    <div class="fakeimg" style="height:200px;"><img src="img/laptop.jpg" alt="A laptop"></div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil ea, provident delectus adipisci, minus deserunt molestiae at exercitationem, magnam aut alias ab dicta nostrum tempora dolore animi rerum harum? Provident?</p>
+                  </div>
+                  <div class="card">
+                    <h2>You got this!</h2>
+                    <h5>I am so hungry, Sep 2, 2018</h5>
+                    <div class="fakeimg" style="max-height:200px;"><img src="img/mural.jfif" alt="students on stairs by a mural"></div>
+                    <p>The Associated Press found that the wealthy financier's donations included $15,000 to the exclusive Hewitt School on the Upper East Side of Manhattan, $35,000 to the Junior Tennis Champions Center in College Park, Maryland, and $25,000 to the Ecole du Bel-Air grade school in Haiti — all after he pleaded guilty in 2008 to charges of soliciting a minor for prostitution.
+
+                            Epstein's donations through his charitable foundations, though not in violation of his status as a sex offender, were nonetheless awkward for some recipients. They were also, at times, difficult to trace.
+                            
+                            It wasn't until later, when they realized a sex offender was behind the donations, that the school, the tennis center and the Haiti project returned the money.</p>
+                  </div>
+                </div>
+                <div class="rightcolumn">
+                  <div class="card">
+                    <h2>A California school board has voted to paint over a mural of George Washington. Educators want to save it</h2>
+                    <div class="fakeimg" style="height:125px;"><img src="img/books.jpg" alt="School"></div>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                  </div>
+                  <div class="card">
+                    <h3>Popular Post</h3>
+                    <div class="fakeimg"><img src="img/legoblocks.jpg" alt="Lego Building Blocks"></div><br>
+                    <div class="fakeimg"><img src="img/cpu.jpg" alt="a CPU slot on a motherboard"></div><br>
+                    <div class="fakeimg"><img src="img/circuit.jpg" alt="a circuit board"></div>
+                  </div>
+                  <div class="card">
+                    <h3>Follow Me</h3>
+                    <p>Lorem, ipsum dolor sit</p>
+                  </div>
+                </div>
+              </div>
+              </section>
+    </div>
+    `;
+  })
 
 links[1].addEventListener("click", function() {
     window.scrollTo(0, 0);
@@ -132,7 +240,7 @@ links[1].addEventListener("click", function() {
     style.innerHTML = 'header.container img {display: none}';
     document.head.append(style);
     document.querySelector('.container.home').innerHTML =
-        `<div style="animation: blurIn 2.5s" class="about">
+        `<div style="animation: blurIn 1s" class="about">
         <img class=""" src="img/nebula.jpg" alt="Header Image of a nebula">
         <div class="flex flex-column flex-w-100">
             <h2>Space Travel</h2>
@@ -228,6 +336,7 @@ document.querySelectorAll('nav ul li a')[0].addEventListener("click", function (
     window.scrollTo(0, 0);
     document.querySelector('.container.home').innerHTML = home;
 });
+
 </script>
 </body>
 </html>
