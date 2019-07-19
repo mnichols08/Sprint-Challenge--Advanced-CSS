@@ -167,6 +167,7 @@ table {
 }
 html {
   font-size: 62.5%;
+  font-weight: 800;
 }
 html,
 body {
@@ -467,14 +468,14 @@ nav ul {
   }
 }
 nav ul a {
-  color: #454A59;
+  color: #000;
   text-decoration: none;
   font-family: #454A59;
   font-size: 1.6rem;
 }
 nav ul a:hover {
   text-decoration: underline;
-  color: #333;
+  color: #111;
 }
 footer {
   color: #22283B;
